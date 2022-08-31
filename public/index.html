@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
     <link rel="manifest" href="manifest.json?v=8">
-    <script src="js/main.js" defer = ""></script>r
+    <script src="js/main.js" defer = ""></script>
 </head>
 <body>
     <header class="header">
@@ -197,6 +197,19 @@
         <a class="you">&copy; @lu_g.ustavo</a>
         <a class="you" href="">ATIVIDADE DE PAM - ETEC</a>
         <a class="you" href="https://www.youtube.com">Inspiração - YouTube</a>
+
+        <script>
+            if('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    console.log('App is loader');
+                    navigator.serviceWorker.register('./service-worker-minimum-to-intall-pwa.js')
+                    .then( () => {
+                        console.log("Service Worker registerd");
+                    })
+                })
+            }
+        
+        </script>
     </footer>
 </body>
 </html>
